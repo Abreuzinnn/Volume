@@ -1,5 +1,5 @@
 [build]
-  command = "sh setup.sh && pip install -r requirements.txt && python Alerta.py"
+  command = "sh setup.sh && pip install -r requirements.txt && python AlertaSPH.py"
   publish = "public"
 
 [build.environment]
