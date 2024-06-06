@@ -1,0 +1,18 @@
+[build]
+  command = "sh setup.sh && pip install -r requirements.txt && python Alerta.py"
+  publish = "public"
+
+[build.environment]
+  # Definir a versão do Python
+  PYTHON_VERSION = "3.8"
+
+[build.processing]
+  skip_processing = true
+
+[build.lifecycle]
+  # Instruções pré-construção para instalar dependências do SO
+  [build.lifecycle.preBuild]
+    commands = [
+      "apt-get update",
+      "apt-get install -y libportaudio2 libasound2-dev libportaudio-dev libportaudiocpp0 portaudio19-dev",
+    ]
